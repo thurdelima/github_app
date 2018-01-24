@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub app</title>
+
+
+  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" type="text/css" href="js/jquery.gritter/css/jquery.gritter.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+<body  >
+
+  <div class="container" ng-controller="loginController">
+    <div class=" col-sm-12">
+
+      <div class="wrapper" ng-show="mostraBusca" >
+        <form class="form-signin" ng-submit="fazerLogin()">
+          <h2 class="form-signin-heading">GitHub Finder</h2>
+          <input type="text" class="form-control" ng-model="usuario" placeholder="Usuário" required="" autofocus="" />
+          <!-- <input type="password" class="form-control" ng-model="login.senha" placeholder="Password" required=""/> -->
+          <br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">buscar</button>
+        </form>
+      </div>
+
+
+      <div class="wrapper" ng-show="mostraResult" >
+        <form class="form-signin1">
+          <div class="col-sm-2">
+            <img class="img-circle" src="{{res.avatar_url}}" alt="">
+
+          </div>
+
+          <div class="form-group col-sm-6">
+            <label for="criado em">Link</label>
+            <input type="text" class="form-control" value="{{res.html_url}}"  />
+          </div>
+
+          <div class="form-group col-sm-3">
+            <label for="criado em">Usuário</label>
+            <input type="text" class="form-control" value="{{res.login}}" readonly="true" />
+          </div>
+
+
+            <div class="form-group col-sm-3">
+              <label for="criado em">Criado em</label>
+              <input type="text" class="form-control" value="{{res.created_at}}" readonly="true" />
+            </div>
+
+            <div class="form-group col-sm-3">
+              <label for="criado em">Última Atualização</label>
+              <input type="text" class="form-control" value="{{res.updated_at}}" readonly="true" />
+            </div>
+
+            <div class="form-group col-sm-2">
+              <label for="criado em">Seguidores</label>
+              <input type="text" class="form-control" value="{{res.followers}}" readonly="true" />
+            </div>
+
+            <div class="form-group col-sm-2">
+              <label for="criado em">Seguindo</label>
+              <input type="text" class="form-control" value="{{res.following}}" readonly="true" />
+            </div>
+
+
+          <!-- <input type="password" class="form-control" ng-model="login.senha" placeholder="Password" required=""/> -->
+
+          <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="voltar()">Voltar</button>
+        </form>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <script src="js/lib/angular.min.js"></script>
+  <script src="js/lib/angular-animate.min.js"></script>
+  <script src="js/lib/angular-route.min.js"></script>
+  <script src="js/lib/angular-resource.min.js"></script>
+  <script src="js/lib/angular-ui-utils.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.gritter/js/jquery.gritter.min.js"></script>
+    <script src="js/loginController.js"></script>
+
+</body>
+
+</html>
